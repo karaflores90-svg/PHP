@@ -35,6 +35,7 @@ if (isset($_POST['add'])) {
         a:hover { text-decoration:underline; }
     </style>
 </head>
+
 <body>
 <div class="container">
     <h2>Add Car</h2>

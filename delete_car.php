@@ -5,10 +5,10 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     exit();
 }
 
-include '../db.php';
+include 'db.php';
 
 $id = $_GET['id'];
 mysqli_query($conn, "DELETE FROM cars WHERE car_id=$id");
 
-header("Location: view_cars.php");
+header("Location: viewcar.php");
 exit();

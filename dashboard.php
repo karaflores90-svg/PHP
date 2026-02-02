@@ -3,7 +3,7 @@ session_start();
 
 // Only allow admin users
 if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
-    header("Location: ../login.php");
+    header("Location: login.php");
     exit();
 }
 ?>
@@ -66,6 +66,17 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
             font-size: 18px;
             color: #555;
         }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +99,11 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     <h2>Dashboard Overview</h2>
     <p style="text-align:center;">You can add, view, edit, and delete cars using the links above.</p>
 </div>
+
+<!-- Footer -->
+<footer>
+    © 2026 Car Rental System 
+</footer>
 
 </body>
 </html>

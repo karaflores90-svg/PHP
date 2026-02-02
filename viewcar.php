@@ -35,7 +35,7 @@ $cars = mysqli_query($conn, "SELECT * FROM cars ORDER BY car_id DESC");
     <div class="top-links">
         <a href="addcar.php">Add New Car</a>
         <a href="dashboard.php">Dashboard</a>
-        <a href="../logout.php">Logout</a>
+        <a href="logout.php">Logout</a>
     </div>
 
     <table>
@@ -55,8 +55,8 @@ $cars = mysqli_query($conn, "SELECT * FROM cars ORDER BY car_id DESC");
             <td><?= $car['price_per_day'] ?></td>
             <td><?= $car['status'] ?></td>
             <td>
-                <a href="editcar.php?id=<?= $car['car_id'] ?>">Edit</a> |
-                <a href="deletecar.php?id=<?= $car['car_id'] ?>" onclick="return confirm('Delete this car?')">Delete</a>
+                <a href="edit_car.php?id=<?= $car['car_id'] ?>">Edit</a> |
+                <a href="delete_car.php?id=<?= $car['car_id'] ?>" onclick="return confirm('Delete this car?')">Delete</a>
             </td>
         </tr>
         <?php } ?>

@@ -17,24 +17,72 @@ $cars = mysqli_query($conn, "SELECT * FROM cars WHERE status='Available' ORDER B
     <meta charset="UTF-8">
     <title>Customer Dashboard - Car Rental</title>
     <style>
-        body { font-family: Arial; background: #f0f2f5; }
-        .container { max-width: 900px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        body { font-family: Arial; background: #f0f2f5; margin:0; padding:0; }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 50px auto 100px; /* bottom margin for footer */
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
         h2 { text-align:center; margin-bottom: 30px; }
+
         table { width:100%; border-collapse: collapse; }
         th, td { border:1px solid #ccc; padding:12px; text-align:center; }
         th { background:#4CAF50; color:white; }
+
         a { color:#4CAF50; text-decoration:none; }
         a:hover { text-decoration:underline; }
+
         .top-links { text-align:center; margin-bottom:20px; }
-        .top-links a { margin:0 10px; padding:10px 20px; background:#4CAF50; color:white; border-radius:5px; }
+        .top-links a {
+            margin:0 10px;
+            padding:10px 20px;
+            background:#4CAF50;
+            color:white;
+            border-radius:5px;
+        }
         .top-links a:hover { background:#45a049; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+
+<!-- Header -->
+<header>
+    <h1>🚗 Car Rental System - Customer Panel</h1>
+</header>
+
 <div class="container">
     <h2>Available Cars</h2>
     <div class="top-links">
-        <a href="dashboard.php">Dashboard</a>
+        
         <a href="../logout.php">Logout</a>
     </div>
 
@@ -61,5 +109,11 @@ $cars = mysqli_query($conn, "SELECT * FROM cars WHERE status='Available' ORDER B
         <?php } ?>
     </table>
 </div>
+
+<!-- Footer -->
+<footer>
+    © 2026 Car Rental System
+</footer>
+
 </body>
 </html>

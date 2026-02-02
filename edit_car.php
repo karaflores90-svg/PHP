@@ -5,7 +5,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     exit();
 }
 
-include '../db.php';
+include 'db.php';
 
 $id = $_GET['id'];
 $car_query = mysqli_query($conn, "SELECT * FROM cars WHERE car_id=$id");
@@ -18,7 +18,7 @@ if (isset($_POST['update'])) {
     $status = $_POST['status'];
 
     mysqli_query($conn, "UPDATE cars SET car_name='$car_name', brand='$brand', price_per_day='$price', status='$status' WHERE car_id=$id");
-    header("Location: view_cars.php");
+    header("Location: ../viewcar.php");
     exit();
 }
 ?>
@@ -52,7 +52,7 @@ if (isset($_POST['update'])) {
         </select>
         <button name="update" type="submit">Update Car</button>
     </form>
-    <a href="view_cars.php">Back to Car List</a>
+    <a href="viewcar.php">Back to Car List</a>
 </div>
 </body>
 </html>
